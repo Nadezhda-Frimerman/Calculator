@@ -15,33 +15,35 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     }
 
-    @GetMapping ()
-    public String getHello (){
+    @GetMapping()
+    public String getHello() {
         return "Добро пожаловать в калькулятор";
     }
 
     @GetMapping(path = "/plus")
-    public String getPlus (@RequestParam (value = "num1") Double num1,
-                           @RequestParam (value = "num2") Double num2){
-        return num1+" + "+num2+"="+calculatorService.getSummary (num1, num2);
+    public String getPlus(@RequestParam(value = "num1") Double num1,
+                          @RequestParam(value = "num2") Double num2) {
+        return num1 + " + " + num2 + "=" + calculatorService.getSummary(num1, num2);
 
     }
 
     @GetMapping(path = "/minus")
-    public String getMinus (@RequestParam (value = "num1") Double num1,
-                            @RequestParam (value = "num2") Double num2){
-        return num1+" - "+num2+" = "+ calculatorService.getSubtraction (num1, num2);
+    public String getMinus(@RequestParam(value = "num1") Double num1,
+                           @RequestParam(value = "num2") Double num2) {
+        return num1 + " - " + num2 + " = " + calculatorService.getSubtraction(num1, num2);
 
     }
+
     @GetMapping(path = "/multiply")
-    public String getMultiply (@RequestParam (value = "num1") Double num1,
-                               @RequestParam (value = "num2") Double num2){
-        return num1+" + "+num2+" = "+ calculatorService.getMultiplication (num1, num2);
+    public String getMultiply(@RequestParam(value = "num1") Double num1,
+                              @RequestParam(value = "num2") Double num2) {
+        return num1 + " + " + num2 + " = " + calculatorService.getMultiplication(num1, num2);
     }
+
     @GetMapping(path = "/divide")
-    public String getDivide (@RequestParam (value = "num1") Double num1,
-                             @RequestParam (value = "num2") Double num2){
-        return num1+" / "+num2+" = "+ calculatorService.getDivision (num1, num2);
+    public String getDivide(@RequestParam(value = "num1") Double num1,
+                            @RequestParam(value = "num2") Double num2) {
+        return num1 + " / " + num2 + " = " + calculatorService.getDivision(num1, num2);
     }
 
 }
